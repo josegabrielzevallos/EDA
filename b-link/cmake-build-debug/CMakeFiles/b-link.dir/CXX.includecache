@@ -1,0 +1,48 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Jose Gabriel/Documents/C.Computacion/2021-R/EDA/Parcial/b-link/source/b-link.hpp
+climits
+-
+fstream
+-
+iostream
+-
+sstream
+-
+utility
+-
+
+C:/Users/Jose Gabriel/Documents/C.Computacion/2021-R/EDA/Parcial/b-link/source/main.cpp
+condition_variable
+-
+iostream
+-
+mutex
+-
+random
+-
+sstream
+-
+thread
+-
+b-link.hpp
+C:/Users/Jose Gabriel/Documents/C.Computacion/2021-R/EDA/Parcial/b-link/source/b-link.hpp
+condition_variable
+-
+iostream
+-
+mutex
+-
+random
+-
+thread
+-
+b-link.hpp
+C:/Users/Jose Gabriel/Documents/C.Computacion/2021-R/EDA/Parcial/b-link/source/b-link.hpp
+

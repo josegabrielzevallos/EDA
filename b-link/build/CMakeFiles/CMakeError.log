@@ -1,0 +1,19 @@
+Determining if the include file pthread.h exists failed with the following output:
+Change Dir: C:/Users/Jose Gabriel/Documents/C.Computacion/2021-R/EDA/Parcial/b-link/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/MinGW/bin/mingw32-make.exe cmTC_d8eca/fast && C:/MinGW/bin/mingw32-make.exe  -f CMakeFiles\cmTC_d8eca.dir\build.make CMakeFiles/cmTC_d8eca.dir/build
+mingw32-make.exe[1]: Entering directory 'C:/Users/Jose Gabriel/Documents/C.Computacion/2021-R/EDA/Parcial/b-link/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_d8eca.dir/CheckIncludeFile.c.obj
+C:\MinGW\bin\gcc.exe    -o CMakeFiles\cmTC_d8eca.dir\CheckIncludeFile.c.obj -c "C:\Users\Jose Gabriel\Documents\C.Computacion\2021-R\EDA\Parcial\b-link\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c"
+C:\Users\Jose Gabriel\Documents\C.Computacion\2021-R\EDA\Parcial\b-link\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c:1:21: fatal error: pthread.h: No such file or directory
+ #include <pthread.h>
+                     ^
+compilation terminated.
+CMakeFiles\cmTC_d8eca.dir\build.make:83: recipe for target 'CMakeFiles/cmTC_d8eca.dir/CheckIncludeFile.c.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_d8eca.dir/CheckIncludeFile.c.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'C:/Users/Jose Gabriel/Documents/C.Computacion/2021-R/EDA/Parcial/b-link/build/CMakeFiles/CMakeTmp'
+Makefile:139: recipe for target 'cmTC_d8eca/fast' failed
+mingw32-make.exe: *** [cmTC_d8eca/fast] Error 2
+
+
+
