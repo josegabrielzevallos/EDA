@@ -1,0 +1,227 @@
+warning: LF will be replaced by CRLF in source/main.cpp.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in source/persistence/partial_directed_graph.hpp.
+The file will have its original line endings in your working directory
+[1mdiff --git a/source/main.cpp b/source/main.cpp[m
+[1mindex c768769..789e836 100644[m
+[1m--- a/source/main.cpp[m
+[1m+++ b/source/main.cpp[m
+[36m@@ -6,32 +6,32 @@[m
+ #include <vector>[m
+ [m
+ // TODO: Uncommend after implement the partial structure[m
+[31m-// #include "persistence/partial_directed_graph.hpp"[m
+[32m+[m[32m#include "persistence/partial_directed_graph.hpp"[m
+ #include "pointer_machine/directed_graph.hpp"[m
+[31m-[m
+[32m+[m[32m///*[m
+ void test_directed_graph() {[m
+   std::cout << "Directed Graph"[m
+             << "\n";[m
+   // Create a DirectedGraph, a maximum of 5 edge for each node and the root with[m
+   // the starting value of 1.[m
+   ADE::PointerMachine::DirectedGraph<int, ADE::PointerMachine::Node<int>>[m
+[31m-      my_graph(1, 5);[m
+[32m+[m[32m      my_graph(1, 5);//1 es el valor del root, y 5 es la cantidad de nodos que pueden apuntar[m
+ [m
+   // We can obtain the root and print their value.[m
+   ADE::PointerMachine::Node<int>* root_ptr = my_graph.get_root_ptr();[m
+[31m-  std::cout << "Root Value: " << root_ptr->get_data() << "\n";  // 5[m
+[32m+[m[32m  std::cout << "Root Value: " << root_ptr->get_data() << "\n";  //obtener el valor del root[m
+ [m
+   // Also, we can insert a new vertex passing the new Node value, and the index[m
+   // of the pointer that will be used to point the inserted node.[m
+[31m-  my_graph.get_root().insert_vertex(0, 2);  // 5[0] -> 2[m
+[32m+[m[32m  my_graph.get_root().insert_vertex(0, 2);  // 1[0] -> 2[m
+ [m
+[31m-  std::cout << "Inserted Value: " << my_graph.get_root()[0].get_data()[m
+[32m+[m[32m  std::cout << "Inserted Value: " << my_graph.get_root()[0].get_data()//impime en la posiscion 0 imrimiria el 2[m
+             << "\n";  // 2[m
+ [m
+   // Likewise, the method to insert a new vertex, returns a reference of the[m
+   // new vertex inserted.[m
+   ADE::PointerMachine::Node<int>* other_inserted_node_ptr =[m
+[31m-      my_graph.get_root()[0].insert_vertex(1, 3);  // 5[0] -> 2[1] -> 3[m
+[32m+[m[32m      my_graph.get_root()[0].insert_vertex(1, 3);  // 1[0] -> 2[1] -> 3[m
+ [m
+   std::cout << "Inserted Value: " << my_graph.get_root()[0][1].get_data()[m
+             << "\n";  // 3[m
+[36m@@ -45,7 +45,30 @@[m [mvoid test_directed_graph() {[m
+   std::cout << "Following other Edge: " << my_graph.get_root()[1].get_data()[m
+             << "\n";[m
+ }[m
+[32m+[m[32m//*/[m
+[32m+[m[32m/*[m
+[32m+[m[32mvoid test_directed_graph() {[m
+ [m
+[32m+[m	[32mADE :: Persistence :: PartialDirectedGraph<int> my_graph(3,4,5);[m
+[32m+[m	[32mADE :: Persistence :: PartialNode<int> *root_ptr =my_graph.get_root_ptr();[m
+[32m+[m[41m	[m
+[32m+[m	[32mstd::cout<< "Ndata root: "<< *root_ptr->data_ << std::endl;[m
+[32m+[m	[32mADE:: Persistence :: PartialNode<int>* inserted_node_ptr = my_graph.insert_vertex(4, root_ptr, 0);[m
+[32m+[m	[32m//std::cout<< "rooTest forward version: 1 posisicion[0] = " << *(*root_ptr)[{0,1}].data_<< std::endl;[m[41m  [m
+[32m+[m	[32mstd::cout<< "Ndata nextroot: "<< *inserted_node_ptr->data_ << std::endl;[m
+[32m+[m	[32mADE:: Persistence :: PartialNode<int>* Ptr_1 = my_graph.insert_vertex(7, root_ptr, 0);[m
+[32m+[m	[32mADE:: Persistence :: PartialNode<int>* Ptr_2 = my_graph.insert_vertex(11, root_ptr, 0);[m
+[32m+[m	[32mADE:: Persistence :: PartialNode<int>* Ptr_3 = my_graph.insert_vertex(13, Ptr_2, 1);[m
+[32m+[m	[32m//ADE:: Persistence :: PartialNode<int> retrived_node = (*root_ptr)[{0,2}];[m[41m [m
+[32m+[m	[32m//std::cout << "Next Value: " << *retrived_node.data_ << std::endl;[m
+[32m+[m[41m	[m
+[32m+[m	[32mstd::cout<< "rooTest forward version: 1 posisicion[0] = " << *(*root_ptr)[{0,1}].data_<< std::endl;[m[41m  [m
+[32m+[m	[32mstd::cout<< "rooTest forward version: 2 posisicion[0] = " << *(*root_ptr)[{0,2}].data_<< std::endl;[m
+[32m+[m	[32mstd::cout<< "rooTest forward version: 3 posisicion[0] = " << *(*root_ptr)[{0,3}].data_<< std::endl;[m
+[32m+[m	[32mADE:: Persistence :: PartialNode<int> retrived_node =(*root_ptr)[{0,2}];[m
+[32m+[m	[32mstd::cout<< "next to ptr2 version 5 posisicion[1] = " << *(*root_ptr)[{0,3}][{1,5}].data_<< std::endl;[m[41m [m
+[32m+[m[32m}[m
+[32m+[m[32m*/[m
+ int main() {[m
+   test_directed_graph();[m
+ [m
+[1mdiff --git a/source/persistence/partial_directed_graph.hpp b/source/persistence/partial_directed_graph.hpp[m
+[1mindex 0f5cb8c..7bf4231 100644[m
+[1m--- a/source/persistence/partial_directed_graph.hpp[m
+[1m+++ b/source/persistence/partial_directed_graph.hpp[m
+[36m@@ -2,39 +2,85 @@[m
+ #ifndef SOURCE_PERSISTENCE_PARTIAL_DIRECTED_GRAPH_HPP_[m
+ #define SOURCE_PERSISTENCE_PARTIAL_DIRECTED_GRAPH_HPP_[m
+ [m
+[32m+[m[32m#include <vector>[m
+ #include <utility>[m
+[32m+[m[32m#include "Directed.hpp"[m
+ [m
+ namespace ADE {[m
+ namespace Persistence {[m
+ [m
+ template <typename Type>[m
+[31m-class PartialNode {[m
+[32m+[m[32mclass PartialNode : public Node<Type>{[m
+  public:[m
+   typedef Type data_type;[m
+ [m
+[32m+[m[41m  [m
+   PartialNode() {}[m
+ [m
+   PartialNode(data_type const& data, std::size_t const& out_ptrs_size,[m
+[31m-              std::size_t const& in_ptrs_size) {[m
+[31m-    backward_ = new PartialNode<Type>*[in_ptrs_size]();[m
+[32m+[m[32m              std::size_t const& in_ptrs_size)[m[41m [m
+[32m+[m		[32m: Node<Type>(data,out_ptrs_size),[m
+[32m+[m		[32mmodificaciones(0),[m
+[32m+[m		[32m//backward_ = new PartialNode<Type>*[in_ptrs_size]()[m
+[32m+[m		[32mbackward_ ( new PartialNode<Type>*[in_ptrs_size]())[m
+[32m+[m[32m  {[m
+[32m+[m	[32mversion=std::vector<int>(in_ptrs_size*2,0);[m
+[32m+[m	[32mfor(int i=0;i<in_ptrs_size*2;++i){[m
+[32m+[m		[32mTable.emplace_back(data,out_ptrs_size);[m
+[32m+[m	[32m}[m
+[32m+[m[41m	[m
+[32m+[m[32m    //backward_ = new PartialNode<Type>*[in_ptrs_size]();[m
+   }[m
+[31m-[m
+[31m-  data_type get_data(unsigned int version) { return data_; }[m
+[31m-[m
+[31m-  bool set_data(data_type const& data) { return true; }[m
+[31m-[m
+[31m-  PartialNode* insert_vertex(std::size_t const& position,[m
+[32m+[m[41m  [m
+[32m+[m[32m/////////////////////////////////////////////////////////////////////////////////[m
+[32m+[m[32m  //data_type get_data(unsigned int version) { return data_; }[m
+[32m+[m[32m  data_type get_data(unsigned int version) { return *Node<Type>::data_; }[m
+[32m+[m
+[32m+[m[32m  //bool set_data(data_type const& data) { return true; }[m
+[32m+[m	[32mbool set_data(data_type const data){[m
+[32m+[m		[32m*Node<Type>::data_=data;[m
+[32m+[m		[32mreturn true;[m
+[32m+[m	[32m}[m
+[32m+[m[32m/////////////////////////////////////////////////////////////////////////////////////[m
+[32m+[m[41m	[m
+[32m+[m	[32mbool set_ptr(PartialNode* ptr, unsigned int id){[m
+[32m+[m		[32mNode<Type>::forward_ = ptr;[m
+[32m+[m		[32mreturn true;[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m[32m///////////////////////////////////////////////////////////////////////////////////[m
+[32m+[m[32m/*[m
+[32m+[m	[32mPartialNode* insert_vertex(std::size_t const& position,[m
+                              data_type const& data) {[m
+     return nullptr;[m
+[31m-  }[m
+[32m+[m[32m  }*/[m
+[32m+[m[41m		[m
+[32m+[m[32m/////////////////////////////////////////////////////////////////////////////////////[m
+[32m+[m[41m  [m
+[32m+[m	[32m//bool update_edge(std::size_t const& position, PartialNode* v) { return true; }[m
+ [m
+[31m-  bool update_edge(std::size_t const& position, PartialNode* v) { return true; }[m
+[32m+[m[32m/////////////////////////////////////////////////////////////////////////////////[m
+ [m
+[32m+[m[32m  PartialNode& operator[](std::size_t id) const {[m
+[32m+[m	[32m  return *dynamic_cast<PartialNode*>(&(Node<Type>::operator[](id)));[m
+[32m+[m[32m  }[m
+[32m+[m[41m	[m
+   PartialNode& operator[]([m
+[31m-      std::pair<std::size_t, unsigned int> const& position_version) const {[m
+[31m-    return;[m
+[32m+[m[32m    //  std::pair<std::size_t, unsigned int> const& position_version) const {[m
+[32m+[m	[32m  std::pair<std::size_t, unsigned int> id_version) const {[m
+[32m+[m	[32m  int i=0;[m
+[32m+[m	[32m  while(i<modificaciones && version[i]<=id_version.second)i++;[m
+[32m+[m	[32m  i--;[m
+[32m+[m	[32m  return *dynamic_cast<PartialNode*>(Table[i].forward_[id_version.first]);[m
+[32m+[m[32m    return 0;[m
+   }[m
+[31m-[m
+[32m+[m[41m  [m
+[32m+[m[41m  [m
+[32m+[m[32m  ////////////////////////////////////////////////////////[m
+[32m+[m[32m  int modificaciones;[m
+[32m+[m[32m  std::vector<Node<data_type>> Table;[m
+[32m+[m[32m  std::vector<int> version;[m
+[32m+[m[32m  /////////////////////////////////////////////////////////////[m
+   data_type* data_;[m
+   std::size_t out_ptrs_size_;[m
+   PartialNode** forward_;[m
+[36m@@ -48,12 +94,16 @@[m [mclass PartialNode {[m
+ };[m
+ [m
+ template <typename Type, typename Node>[m
+[31m-class PartialDirectedGraph {[m
+[32m+[m[32mclass PartialDirectedGraph : : public DirectedGraph<Type, Node> {[m
+  public:[m
+   typedef Type data_type;[m
+ [m
+   PartialDirectedGraph(data_type const data, std::size_t const& out_ptrs_size,[m
+[31m-                       std::size_t const& in_ptrs_size) {}[m
+[32m+[m[32m                       std::size_t const& in_ptrs_size)[m[41m [m
+[32m+[m	[32m  : DirectedGraph<Type, Node>(data, out_ptrs_size,in_ptrs_size),[m
+[32m+[m	[32m  in_ptrs_size_(in_ptrs_size),[m
+[32m+[m	[32m  current_version(0) {}[m
+[32m+[m[41m  [m
+ [m
+   Node* get_root_ptr(unsigned int const& version) { return nullptr; }[m
+ [m
+[1mdiff --git a/source/pointer_machine/directed_graph.hpp b/source/pointer_machine/directed_graph.hpp[m
+[1mindex 64c66e3..0141dbd 100644[m
+[1m--- a/source/pointer_machine/directed_graph.hpp[m
+[1m+++ b/source/pointer_machine/directed_graph.hpp[m
+[36m@@ -16,7 +16,7 @@[m [mclass Node {[m
+  public:[m
+   typedef Type data_type;[m
+ [m
+[31m-  Node() : data_(nullptr), forward_(nullptr), out_ptrs_size_(0) {}[m
+[32m+[m[32m // Node() : data_(nullptr), forward_(nullptr), out_ptrs_size_(0) {}[m
+ [m
+   Node(data_type const& data, std::size_t const& out_ptrs_size)[m
+       : data_(new data_type(data)), out_ptrs_size_(out_ptrs_size) {[m
+[36m@@ -103,9 +103,9 @@[m [mclass DirectedGraph {[m
+ [m
+   virtual ~DirectedGraph() {}[m
+ [m
+[31m-  Node* get_root_ptr() { return root_ptr_; }[m
+[32m+[m[32m  Node* get_root_ptr() { return root_ptr_; }//retorna el la raiz[m
+ [m
+[31m-  Node get_root() { return *root_ptr_; }[m
+[32m+[m[32m  Node get_root() { return *root_ptr_; }//retorna el valor de la raiz[m
+ [m
+   /**[m
+    *  \brief Attachs two nodes[m

@@ -1,0 +1,3 @@
+"C:\Program Files\cmake-3.19.2-win64-x64\bin\cmake.exe" -E rm -f CMakeFiles\persistence.dir/objects.a
+C:\PROGRA~1\CODEBL~1\MinGW\bin\ar.exe cr CMakeFiles\persistence.dir/objects.a @CMakeFiles\persistence.dir\objects1.rsp
+C:\PROGRA~1\CODEBL~1\MinGW\bin\G__~1.EXE -Wl,--whole-archive CMakeFiles\persistence.dir/objects.a -Wl,--no-whole-archive -o persistence.exe -Wl,--out-implib,libpersistence.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\persistence.dir\linklibs.rsp
